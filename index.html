@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Eye Button</title>
+    <style type="text/css">
+        input, input[type=password]
+        {
+            width: 150px;
+            height: 20px;
+        }
+        #toggle_pwd
+        {
+                cursor: pointer;            
+                height: 23px;
+                border: 2px solid lightgrey;
+                margin-left: -5px;
+                font-size: 19px;
+                border-width: 1.7px;
+                border-style: inset;
+                border-color: rgb(118, 118, 118), rgb(133, 133, 133);
+                border-image: initial;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css" />
+<div>
+    <input type="password" id="txtPassword" />
+    <span id="toggle_pwd" class="fa fa-fw fa-eye field_icon"></span>
+</div>
+    <script type="text/javascript">
+        $(function () {
+            $("#toggle_pwd").click(function () {
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var type = $(this).hasClass("fa-eye-slash") ? "text" : "password";
+                $("#txtPassword").attr("type", type);
+            });
+        });
+    </script>
+</body>
+</html>
